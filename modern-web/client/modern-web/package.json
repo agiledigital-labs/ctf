@@ -1,0 +1,65 @@
+{
+  "name": "modern-web-ctf",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^13.0.0",
+    "@testing-library/user-event": "^13.2.1",
+    "@types/jest": "^27.0.1",
+    "@types/node": "^16.7.13",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "bootstrap": "^5.1.3",
+    "html-react-parser": "^1.4.12",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-scripts": "5.0.1",
+    "reactstrap": "^9.0.2",
+    "typescript": "^4.4.2",
+    "web-vitals": "^2.1.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "yon type-check && react-scripts test --watchAll=false",
+    "test-continuous": "react-scripts test",
+    "type-check": "type-coverage --strict --detail --ignore-catch --ignore-files '**/*.test.ts*' --ignore-files 'src/generated/*'",
+    "generate": "graphql-codegen --config codegen.js && prettier --write src/generated",
+    "lint": "eslint src"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "eslint": "^8.13.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-jest": "^26.1.4",
+    "eslint-plugin-jsdoc": "^39.2.4",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-no-secrets": "^0.8.9",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-react-hooks": "^4.4.0",
+    "eslint-plugin-sonarjs": "^0.13.0",
+    "husky": "^7.0.4",
+    "prettier": "^2.6.2",
+    "type-coverage": "^2.21.1",
+    "typescript-coverage-report": "^0.6.4",
+    "typescript-eslint": "^0.0.1-alpha.0",
+    "yarn-or-npm": "^3.0.1"
+  },
+  "typeCoverage": {
+    "atLeast": 100,
+    "strict": true
+  }
+}
