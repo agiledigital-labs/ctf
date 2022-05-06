@@ -1,0 +1,22 @@
+service: modern-web-ctf-api
+
+# Pin this service to only deploy with this specific Serverless version.
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  lambdaHashingVersion: 20201221
+  region: ap-southeast-2
+  stage: ${opt:stage, env:STAGE, "dev"}
+
+plugins:
+  - serverless-plugin-typescript
+
+functions:
+  ctfEndpoint:
+    handler: handler.ctfEndpoint
+    events:
+      - http:
+          path: ctf
+          method: post

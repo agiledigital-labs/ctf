@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "lib": ["ES2020", "esnext.asynciterable"],
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "outDir": ".build",
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "sourceMap": false,
+    "strict": true,
+    "inlineSources": true,
+    "inlineSourceMap": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "target": "ES2015",
+    "noImplicitAny": true,
+    "baseUrl": "src"
+  },
+  "include": ["**/*"],
+  "exclude": ["node_modules"]
+}
