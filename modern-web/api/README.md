@@ -17,3 +17,13 @@ See `serverless.yml` for the environment variables for this command.
 ```sh
 yarn run deploy
 ```
+
+## Test
+
+ Basic check after deploying:
+ 
+```sh
+$ curl --data '{"test": "data"}' \
+  https://[your API Gateway ID].execute-api.ap-southeast-2.amazonaws.com/dev/ctf
+{"test":"data"}
+```
