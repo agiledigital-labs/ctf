@@ -1,7 +1,5 @@
 # Modern Web CTF Solution
 
-## Solution
-
 The main thing to realise is that it might seem like `html-react-parser` is used
 to sanitise the HTML from the API, but it actually doesn't, at least not fully.
 So `<script>alert(1)</script>` and `<img src=404 onerror=alert(1)/>` won't work,

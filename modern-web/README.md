@@ -3,12 +3,13 @@
 Find and exploit a somewhat realistic XSS bug in a Typescript/React app with an
 AWS Lambda for the backend.
 
-The app is an email signature generator. It's actually mildly useful if you work
-at Agile Digital.
+The app is an email signature generator. If you work at Agile Digital, it's
+actually mildly useful in its own right.
 
 You send it your job title and phone number through the frontend client, and it
 sends you back a signature that you can paste into your email client. When you
-open the frontend client, it also shows you the last signature you generated.
+open the frontend client, it also shows you the last signature you (or anyone)
+generated.
 
 There are some hints in [HINTS.md](./HINTS.md) if you get stuck.
 
@@ -20,7 +21,7 @@ for now.
 
 ## Set up
 
-1. Deploy the backend to AWS by following [api/README.md](./api/README.md).
+1. Run/deploy the backend by following [api/README.md](./api/README.md).
 2. Run the client web app by following [client/README.md](./client/README.md).
 
 ## Goal
