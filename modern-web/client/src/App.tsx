@@ -10,6 +10,7 @@ import {
   Input,
   Label,
 } from "reactstrap";
+import axios from "axios";
 
 const apiUrl = process.env.REACT_APP_API_URL ?? "";
 
@@ -28,16 +29,13 @@ const apiFetch = async (
     throw new Error("Environment variable REACT_APP_API_URL is required.");
   }
 
-  const resp = await fetch(apiUrl, {
-    method,
+  const resp = await axios.post(apiUrl, body, {
     headers: {
       "Content-Type": "application/json",
     },
-    body,
   });
 
-  const json = await resp.json();
-  setApiResponse(typeof json === "object" ? json : undefined);
+  setApiResponse(typeof resp.data === "object" ? resp.data : undefined);
 };
 
 const submit = async (
