@@ -8,7 +8,7 @@ WORKDIR /app
 
 ADD package.json .
 ADD yarn.lock .
-RUN yarn install
+RUN yarn install --frozen-lockfile
 
 ADD . .
 

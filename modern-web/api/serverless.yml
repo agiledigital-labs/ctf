@@ -12,6 +12,7 @@ provider:
 
 plugins:
   - serverless-plugin-typescript
+  - serverless-offline
 
 functions:
   ctfEndpoint:
