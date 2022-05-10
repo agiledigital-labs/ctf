@@ -1,6 +1,19 @@
-# Modern Web Stack CTF
+# Modern Web Stack CTF - Client App
 
-TODO
+## Running
+
+```sh
+docker build -t modern-web-ctf-client .
+docker run \
+  --env REACT_APP_API_URL='https://[API Gateway ID].execute-api.ap-southeast-2.amazonaws.com/dev/ctf' \
+  -it --rm -p 3000:3000 modern-web-ctf-client
+```
+
+Where `[API Gateway ID]` is the ID of the AWS API Gateway created when you deployed the API.
+
+Or use `REACT_APP_API_URL=... yarn start`.
+
+Then open [http://localhost:3000](http://localhost:3000).
 
 ## Available Scripts
 

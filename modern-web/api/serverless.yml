@@ -19,4 +19,5 @@ functions:
     events:
       - http:
           path: ctf
-          method: post
+          method: any
+          cors: true

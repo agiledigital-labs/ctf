@@ -1,5 +1,5 @@
 {
-  "name": "modern-web-ctf",
+  "name": "modern-web-ctf-client",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -24,8 +24,7 @@
     "build": "react-scripts build",
     "test": "yon type-check && react-scripts test --watchAll=false",
     "test-continuous": "react-scripts test",
-    "type-check": "type-coverage --strict --detail --ignore-catch --ignore-files '**/*.test.ts*' --ignore-files 'src/generated/*'",
-    "generate": "graphql-codegen --config codegen.js && prettier --write src/generated",
+    "type-check": "type-coverage --strict --detail --ignore-catch --ignore-files '**/*.test.ts*'",
     "lint": "eslint src"
   },
   "browserslist": {
@@ -59,7 +58,7 @@
     "yarn-or-npm": "^3.0.1"
   },
   "typeCoverage": {
-    "atLeast": 100,
+    "atLeast": 98.6,
     "strict": true
   }
 }
