@@ -1,6 +1,8 @@
 import { APIGatewayProxyEventV2, APIGatewayProxyResultV2 } from "aws-lambda";
 import * as fs from "fs";
 
+const easyMode = process.env.EASY_MODE;
+
 const mapObject = <V>(
   obj: { [name: string]: V },
   func: (value: V | string) => V
@@ -47,6 +49,15 @@ exports.ctfEndpoint = async (
     // Normalise the map.
     const formData = mapObject(formDataCleaned, (x: any) => x.toLowerCase());
 
+    const whitelistChars = (str: string) =>
+      easyMode ? str : str.replace(/[^A-Za-z\d-, ()+]*/g, "");
+
+    const jobTitle = whitelistChars(formData["job_title"]);
+    const phoneNumber = whitelistChars(formData["phone_number"]);
+
+    // So you can tap the phone number to call it.
+    const telUrl = `tel:${phoneNumber.replace(/[^+\d]*/g, "")}`;
+
     return {
       headers: {
         "Content-Type": "application/json",
@@ -57,10 +68,10 @@ exports.ctfEndpoint = async (
         // Add formatted email signature.
         email_signature:
           "<p>" +
-          `<b>Agile Digital | ${formData["job_title"]}</b><br/>` +
+          `<b>Agile Digital | ${jobTitle}</b><br/>` +
           "Love Your Software&#8482; | ABN 98 106 361 273<br/>" +
           'p: <a href="tel:+611300858277">1300 858 277</a> | ' +
-          `m: <a href="tel:${formData["phone_number"]}">${formData["phone_number"]}</a> | ` +
+          `m: <a href="${telUrl}">${phoneNumber}</a> | ` +
           'w: <a href="https://agiledigital.com.au">agiledigital.com.au</a>' +
           "</p>",
         ...formData,
