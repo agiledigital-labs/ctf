@@ -1,20 +1,23 @@
 # Modern Web CTF - Backend
 
-## Install
+## Deploy/Run
+
+### Local
+
+Deploying locally is easier, since you don't need an AWS account.
+
+```sh
+docker build -t modern-web-ctf-api .
+docker run -it --rm -p 3009:3009 modern-web-ctf-api
+```
+
+or
 
 ```sh
 nvm install $(cat .nvmrc) && nvm use  # Switch to the project Node/NPM version
 npm install -g yarn
+yarn set version 3.2.1
 yarn install --frozen-lockfile
-```
-
-## Deploy
-
-Deploying locally will probably be easier, since you don't need an AWS account.
-
-### Local
-
-```sh
 yarn run-local
 ```
 

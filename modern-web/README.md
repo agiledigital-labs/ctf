@@ -1,23 +1,22 @@
 # Modern Web Stack XSS CTF
 
-Find and exploit a somewhat realistic XSS bug in a Typescript/React app with an
-AWS Lambda for the backend.
+Find and exploit somewhat-realistic security bugs in a TypeScript/React app with
+an AWS Lambda backend. You can also run everything locally in Docker without
+using AWS.
 
-The app is an email signature generator. If you work at Agile Digital, it's
-actually mildly useful in its own right.
-
-You send it your job title and phone number through the frontend client, and it
-sends you back a signature that you can paste into your email client. When you
-open the frontend client, it also shows you the last signature you (or anyone)
-generated.
+The app is an email signature generator. You send it your job title and phone
+number through the frontend client, and it sends you back a signature that you
+can paste into your email client. When you open the frontend client, it also
+shows you the last signature you (or anyone) generated.
 
 There are some hints in [HINTS.md](./HINTS.md) if you get stuck.
 
-## Known Bugs
+## Unintentional Bugs
 
 There's currently a bug in the backend where it won't always return the latest
 data when you load the client app (i.e. GET requests). Just refresh a few times
-for now.
+for now. This only occurs if you deploy the backend to AWS instead of running it
+locally.
 
 ## Set up
 
@@ -26,9 +25,9 @@ for now.
 
 ## Goal
 
-There's no flag so far. Try to get the client app to execute `alert(1)` on page
-load.
+We haven't actually put a flag in yet, so just try to get the client app to
+execute `alert(1)` on page load.
 
-You might need to read the source code to figure it out. There shouldn't be too
-many serious spoilers in it.
+You will most likely need to read the source code to figure it out. That's
+allowed and intended.
 
